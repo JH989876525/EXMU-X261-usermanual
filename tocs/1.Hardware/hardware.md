@@ -6,6 +6,7 @@
 -->
 
 # TOC
+- [TOC](#toc)
 - [SOM Board Overview](#som-board-overview)
 - [Devices on SOM](#devices-on-som)
   - [QSPI Flash](#qspi-flash)
@@ -18,13 +19,13 @@
   - [Processing System (PS)](#processing-system-ps)
   - [Programmable Logic (PL)](#programmable-logic-pl)
 - [Switchs on Carrier Board](#switchs-on-carrier-board)
-  - [SW3 \& SW6](#sw3--sw6)
-  - [SW4(LED)](#sw4led)
+  - [SW3](#sw3)
   - [SW5](#sw5)
     - [SW5-1,2,4](#sw5-124)
     - [SW5-3](#sw5-3)
   - [SW7](#sw7)
   - [SW8](#sw8)
+  - [SW10(LED)](#sw10led)
 - [Jumpers on Carrier Board](#jumpers-on-carrier-board)
   - [Fan power](#fan-power)
   - [CN6](#cn6)
@@ -66,6 +67,8 @@
   - IO (EMIO)
 
 # Carrier Board Overview
+- Version : A4
+
 ![carrier_baord.png](fig/carrier_baord.png)
 
 # IO on Carrier Board
@@ -87,11 +90,10 @@ There are two types of IO PS & PL on carrier board, IO which from PS will be alw
 
 # Switchs on Carrier Board
 This section introduce the function of switchs which on [the baord](#carrier-board-overview).
-## SW3 & SW6
+## SW3
 - Function : Hardware reset.
 
-## SW4(LED)
-- Function : Power button on when SW5-3 switch to ON.
+![carrier_baord_SW3.png](fig/carrier_baord_SW3.png)
 
 ## SW5
 ### SW5-1,2,4
@@ -99,21 +101,34 @@ This section introduce the function of switchs which on [the baord](#carrier-boa
 ### SW5-3
 - Function : Power button on switch, default off for auto power on. 
 
+![carrier_baord_SW5.png](fig/carrier_baord_SW5.png)
+
 ## SW7
-- Function : CAN BUS Terminal resistor(120ohm) switch. SW7[1] for CAN0, SW7[2] for CAN1.
+- Function : CAN BUS Terminal resistor(120ohm) switch. SW7[1] for CAN0, SW7[2] for CAN1, default off.
+
+![carrier_baord_SW7.png](fig/carrier_baord_SW7.png)
 
 ## SW8
-- Function : Boot Mode selector, default Boot Mode is Quad-SPI (32b).
-
+- Function : Boot Mode selector, default Boot Mode is Quad-SPI (32b).  
     Boot Mode | SW8 [1:4]
     ---|---
     PS JTAG | 1111
     Quad-SPI (32b) | 1011
+- For example following image shows the Boot Mode is Quad-SPI (32b).
+
+![carrier_baord_SW8.png](fig/carrier_baord_SW8.png)
+
+## SW10(LED)
+- Function : Power button, Power button on when SW5-3 switch to ON.
+
+![carrier_baord_SW10.png](fig/carrier_baord_SW10.png)
 
 # Jumpers on Carrier Board
 This section introduce the function of jumpers which on [the baord](#carrier-board-overview).
 ## Fan power
-- Function : 12V & GND.
+- Function : From left to right of following image are 12V & PWM.
+
+![carrier_baord_FAN.png](fig/carrier_baord_FAN.png)
 
 ## CN6
 CN6 is for innoagent connection.
@@ -122,12 +137,15 @@ PIN9 | PIN7 | PIN5 | PIN3 | PIN1
 NC | GND | GND | GND | GND |
 UARTRX | UARTTX | RST | PWR | +5V
 
+![carrier_baord_CN6.png](fig/carrier_baord_CN6.png)
+
 # Debug board
 ![debug_board.png](fig/debug_board.jpg)
 Debug Board include three main function:
 - Debug UART
 - JTAG
 - HDMI UART
+
 ## Debug UART
 - Baud rate : 115200
 - Function : Main interactive interface for developer, it could be access by serial port utilities like minicom, putty, mobaxterm.
