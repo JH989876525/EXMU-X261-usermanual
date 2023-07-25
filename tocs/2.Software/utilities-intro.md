@@ -29,8 +29,8 @@ This page introduce the simple utilities on EXMU-X261 that enhance the user expe
     ```bash
     sudo choverlay <name-of-overlay-app>
     ```
-
-
+- Result:
+![choverlay](fig/choverlay.png)
 # Chboot
 - Chboot is a simple utility that based on shell script, it can change the default boot partition between external SDcard and EMMC which on som board.
 - Help:
@@ -51,3 +51,5 @@ This page introduce the simple utilities on EXMU-X261 that enhance the user expe
     ```bash
     sudo choverlay emmc sdcard
     ```
+- Result:
+![chboot](fig/chboot.png)
