@@ -7,6 +7,7 @@
 
 
 # FAQ
+- [FAQ](#faq)
 - [What is BSP?](#what-is-bsp)
 - [How to flash eMMC on X261?](#how-to-flash-emmc-on-x261)
 - [How to update QSPI FW?](#how-to-update-qspi-fw)
@@ -73,8 +74,8 @@ All application support using RPM to upgrade.
 # How to check the verion on EXMU-X261?
 For BSP verion, using the following command to check. The BSP verion is `Ver.x.x.x`.
 
-```
-bash /etc/init.d/welcome_logo.sh
+```bash
+cat /etc/issue
 ```
 
 ![bsp-verion](./fig/bsp-verion.png)
